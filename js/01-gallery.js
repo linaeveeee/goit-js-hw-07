@@ -5,7 +5,7 @@ const imageList = document.querySelector(".gallery");
 let imageModal;
 
 imageList.addEventListener("click", handleClick);
-imageList.addEventListener("keydown", handleKeydown);
+document.addEventListener("keydown", handleKeydown);
 
 // markup for HTML
 console.log(markup(galleryItems));
@@ -43,9 +43,7 @@ function handleClick(event) {
   const currentImage = event.target.dataset.source;
   const currentImageDescription = event.target.getAttribute("alt");
   imageModal = basicLightbox.create(
-    `<div> class="modal"
-    <img src="${currentImage}" alt="${currentImageDescription}">
-    </div>`
+    `<img src="${currentImage}" alt="${currentImageDescription}">`
   );
   imageModal.show();
 }
